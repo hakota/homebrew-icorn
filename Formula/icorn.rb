@@ -4,9 +4,8 @@
 
 class Icorn < Formula
   desc ""
-  homepage ""
-  url "https://github.com/hakota/homebrew-icorn"
-  sha256 "5b6d41a632b7d9830e2a8f5ebb5a78c5c2d6aebec92ec03397dbde3412ca3eed"
+  homepage "https://github.com/hakota/homebrew-icorn"
+  url "git@github.com:hakota/homebrew-icorn.git", :using => :git
 
   # depends_on "cmake" => :build
 
