@@ -2,17 +2,12 @@
 
 ## Installation
 
-After downloading or cloning please use the cp command to copy to the location where the path passed
+Please make the following command on the premise that Homebrew is installed.
 
 ```
-cp icorn /usr/local/bin/icorn
-```
-
-If you check with which command and Response returns, it is successfully implemented.
-
-```
+$ brew tap hakota/icorn git@github.com:hakota/homebrew-icorn.git
+$ brew install icorn
 $ which icorn
-
 /usr/local/bin/icorn
 ```
 
@@ -20,13 +15,13 @@ $ which icorn
 
 Prepare an image with 1024 x 1024 pixels.
 If you run icorn with that image in the current directory, the icons directory will be output.
+Images for iOS and Android will be output.
 
 ```
-$ mkdir hoge
-$ cp fuga.png ./hoge/fuga.png
-$ cd hoge
+$ ls
+  fuga.png
 $ icorn
 $ ls
-  icons　　　←　output
-  fuga.png  ←　input
+  icons　　　←　output (directory)
+  fuga.png  ←　input (1024 x 1024)
 ```
