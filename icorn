@@ -1,0 +1,92 @@
+#!/bin/bash
+
+echo "　＿　　＿＿＿＿＿　　＿＿＿＿＿＿　　＿＿＿＿＿　　＿＿＿　　　＿_"
+echo "｜　｜｜　　＿＿＿｜｜　　＿＿　　｜｜　　＿　　｜ ｜　 　\　 ｜　｜"
+echo "｜　｜｜　｜　　　　｜　｜　　｜　｜｜　｜＿｜　｜ ｜　｜\ \  ｜　｜"
+echo "｜　｜｜　｜　　　　｜　｜　　｜　｜｜　　＿　＿｜ ｜　｜ \ \ ｜　｜"
+echo "｜　｜｜　｜＿＿＿　｜　｜＿＿｜　｜｜　｜ \　\    ｜　｜  \ \｜　｜"
+echo "｜＿｜｜＿＿＿＿＿｜｜＿＿＿＿＿＿｜｜＿｜　 \＿\　|___｜   \＿＿_｜"
+echo ""
+
+dir=./icons
+dir_i=./icons/ios
+dir_a=./icons/android
+
+# check & create
+mkdir -p $dir > /dev/null
+mkdir -p $dir_i > /dev/null
+mkdir -p $dir_a > /dev/null
+
+# ディレクトリ内のPNGかJPGの画像を検索
+find . \( -name \*.jpg -o -name \*.png \) -maxdepth 1 | while read f; do
+
+################################
+#             iOS              #
+################################
+
+# iPhone Notification iOS 7-11
+sips -Z 40 40 $f --out $dir_i/icon-20@2x.png/$f
+sips -Z 60 60 $f --out $dir_i/icon-20@3x.png/$f
+
+# iPhone Spotlight - iOS 5,6 Setting - iOS 5-11
+sips -Z 58 58 $f --out $dir_i/icon-29@2x.png/$f
+sips -Z 87 87 $f --out $dir_i/icon-29@3x.png/$f
+
+# iPhone Spotlight iOS 7-11
+sips -Z 80 80 $f --out $dir_i/icon-40@2x.png/$f
+sips -Z 120 120 $f --out $dir_i/icon-40@3x.png/$f
+
+# iPhone App iOS 7-11
+sips -Z 120 120 $f --out $dir_i/icon-60@2x.png/$f
+sips -Z 180 180 $f --out $dir_i/icon-60@3x.png/$f
+
+# iPad Notifications iOS 7-11
+sips -Z 20 20 $f --out $dir_i/icon-20.png/$f
+
+# iPad Settings iOS 5-11
+sips -Z 29 29 $f --out $dir_i/icon-29.png/$f
+
+# iPad Spotlight iOS 7-11
+sips -Z 40 40 $f --out $dir_i/icon-40.png/$f
+
+# iPad App iOS 7-11
+sips -Z 76 76 $f --out $dir_i/icon-76.png/$f
+sips -Z 152 152 $f --out $dir_i/icon-76@2x.png/$f
+
+# iPad Pro App iOS 9-11
+sips -Z 167 167 $f --out $dir_i/icon-83.5@2x.png/$f
+
+# iOS Marketing
+sips -Z 1024 1024 $f --out $dir_i/icon-1024.png/$f
+sips -Z 512 512 $f --out $dir_i/icon-512.png/$f
+
+################################
+#           Android            #
+################################
+
+# drawable-hdpi/ic_launcher.png　(Android72)	72×72
+sips -Z 72 72 $f --out $dir_a/ic_launcher-72.png/$f
+
+# drawable-ldpi/ic_launcher.png　(Android36)	36×36
+sips -Z 36 36 $f --out $dir_a/ic_launcher-36.png/$f
+
+# drawable-mdpi/ic_launcher.png　(Android48)	48×48
+sips -Z 48 48 $f --out $dir_a/ic_launcher-48.png/$f
+
+# drawable-xhdpi/ic_launcher.png　(Android96)	96×96
+sips -Z 96 96 $f --out $dir_a/ic_launcher-96.png/$f
+
+# drawable-xxhdpi/ic_launcher.png　(Android144)	144×144
+sips -Z 144 144 $f --out $dir_a/ic_launcher-144.png/$f
+
+# drawable-xxxhdpi/ic_launcher.png　(Android192)	192×192
+sips -Z 192 192 $f --out $dir_a/ic_launcher-192.png/$f
+
+# playstore-icon.png　(Android512)	512×512
+sips -Z 512 512 $f --out $dir_a/ic_launcher-512.png/$f
+
+# amazon-appstore-icon.png　(Amazon114)
+sips -Z 114 114 $f --out $dir_a/ic_launcher-114.png/$f
+
+mv $f original/
+done
