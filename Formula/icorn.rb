@@ -6,7 +6,7 @@ class Icorn < Formula
   desc ""
   homepage ""
   url "https://github.com/hakota/homebrew-icorn"
-  sha256 "d6c21df2e8179308d1e0f0a9db1c2d6c63ad5fe58f87d9c56b4931a9657cbda6"
+  sha256 "d6e044a72fdc0c0f47093f452037de0fd1b1e151956e0947f63d2aeaaae00bbf"
 
   # depends_on "cmake" => :build
 
